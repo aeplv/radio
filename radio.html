@@ -95,5 +95,22 @@
             audioPlayer5.play();
         }
     </script>
+    
+    <h1>Radio Tev</h1>
+    <button onclick="playAudio6()">Play</button>
+    <br><br>
+    <audio id="audioPlayer6" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio6() {
+            const predefinedUrl6 = 'https://stream.radiotev.lv:8002/radiov';
+            const audioPlayer6 = document.getElementById('audioPlayer6');
+            audioPlayer6.src = predefinedUrl6;
+            audioPlayer6.load();
+            audioPlayer6.play();
+        }
+    </script>
 </body>
 </html>
