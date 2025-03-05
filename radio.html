@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+    <style>
+        body {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chart hits.fm</h1>
+    <button onclick="playAudio1()">Play</button>
+    <br><br>
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio1() {
+            const predefinedUrl = 'https://rautemusik.stream25.radiohost.de/charthits?ref=rmwp&listenerid=f375cc6c64cea1a5c647c791067667fa&awparams=companionAds:true&_art=dD0xNzQxMTcyNjA0JmQ9NjdjZmY2NzdkMWZkOGVlMGY1NmU';
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = predefinedUrl;
+            audioPlayer.load();
+            audioPlayer.play();
+        }
+    </script>
+
+    <h1>TruckersFM</h1>
+    <button onclick="playAudio2()">Play</button>
+    <br><br>
+    <audio id="audioPlayer2" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio2() {
+            const predefinedUrl2 = 'http://radio.truckers.fm/';
+            const audioPlayer2 = document.getElementById('audioPlayer2');
+            audioPlayer2.src = predefinedUrl2;
+            audioPlayer2.load();
+            audioPlayer2.play();
+        }
+    </script>
+
+    <h1>EHR Super Hits</h1>
+    <button onclick="playAudio3()">Play</button>
+    <br><br>
+    <audio id="audioPlayer3" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio3() {
+            const predefinedUrl3 = 'https://stream.ehrhiti.lv:8000/Stream_21.mp3';
+            const audioPlayer3 = document.getElementById('audioPlayer3');
+            audioPlayer3.src = predefinedUrl3;
+            audioPlayer3.load();
+            audioPlayer3.play();
+        }
+    </script>
+
+    <h1>European Hit Radio</h1>
+    <button onclick="playAudio4()">Play</button>
+    <br><br>
+    <audio id="audioPlayer4" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio4() {
+            const predefinedUrl4 = 'https://stream.ehrhiti.lv:8000/ehr.mp3';
+            const audioPlayer4 = document.getElementById('audioPlayer4');
+            audioPlayer4.src = predefinedUrl4;
+            audioPlayer4.load();
+            audioPlayer4.play();
+        }
+    </script>
+
+    <h1>NCS</h1>
+    <button onclick="playAudio5()">Play</button>
+    <br><br>
+    <audio id="audioPlayer5" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio5() {
+            const predefinedUrl5 = 'https://stream.laut.fm/ncsradio';
+            const audioPlayer5 = document.getElementById('audioPlayer5');
+            audioPlayer5.src = predefinedUrl5;
+            audioPlayer5.load();
+            audioPlayer5.play();
+        }
+    </script>
+</body>
+</html>
