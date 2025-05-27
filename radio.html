@@ -87,78 +87,13 @@
     </audio>
 
     <script>
-    // List of audio sources
-    const playlist = [
-        "https://aeplv.github.io/musicbox/audio2.mp3",
-        "https://aeplv.github.io/musicbox/audio1.mp3",
-        "https://aeplv.github.io/musicbox/audio3.mp3",
-        "https://aeplv.github.io/musicbox/audio4.mp3",
-        "https://aeplv.github.io/musicbox/audio5.mp3",
-        "https://aeplv.github.io/musicbox/audio6.mp3",
-        "https://aeplv.github.io/musicbox/audio7.mp3",
-        "https://aeplv.github.io/musicbox/audio8.mp3",
-        "https://aeplv.github.io/musicbox/audio9.mp3",
-        "https://aeplv.github.io/musicbox/audio10.mp3",
-        "https://aeplv.github.io/musicbox/audio11.mp3",
-        "https://aeplv.github.io/musicbox/audio12.mp3",
-        "https://aeplv.github.io/musicbox/audio13.mp3",
-        "https://aeplv.github.io/musicbox/audio14.mp3",
-        "https://aeplv.github.io/musicbox/audio15.mp3",
-        "https://aeplv.github.io/musicbox/audio16.mp3",
-        "https://aeplv.github.io/musicbox/audio17.mp3",
-        "https://aeplv.github.io/musicbox/audio18.mp3",
-        "https://aeplv.github.io/musicbox/audio19.mp3",
-        "https://aeplv.github.io/musicbox/audio20.mp3",
-        "https://aeplv.github.io/musicbox/audio21.mp3",
-        "https://aeplv.github.io/musicbox/audio22.mp3",
-        "https://aeplv.github.io/musicbox/audio23.mp3",
-        "https://aeplv.github.io/musicbox/audio24.mp3",
-        "https://aeplv.github.io/musicbox/audio25.mp3",
-        "https://aeplv.github.io/musicbox/audio26.mp3"
-    ];
-
-    // Shuffle function (Fisher-Yates)
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+        function playAudio5() {
+            const predefinedUrl5 = 'https://stream.ehrhiti.lv:8000/ehr.mp3';
+            const audioPlayer5 = document.getElementById('audioPlayer5');
+            audioPlayer5.src = predefinedUrl5;
+            audioPlayer5.load();
+            audioPlayer5.play();
         }
-    }
-
-    // Shuffle playlist at the start
-    shuffle(playlist);
-
-    const audioPlayer = document.getElementById("audioPlayer");
-    const nextBtn = document.getElementById("nextBtn");
-    let currentSongIndex = 0;
-
-    function loadSong(index) {
-        audioPlayer.src = playlist[index];
-        audioPlayer.play();
-    }
-
-    loadSong(currentSongIndex);
-
-    audioPlayer.addEventListener("ended", () => {
-        currentSongIndex++;
-        if (currentSongIndex < playlist.length) {
-            loadSong(currentSongIndex);
-        } else {
-            // Reshuffle when playlist ends and restart
-            shuffle(playlist);
-            currentSongIndex = 0;
-            loadSong(currentSongIndex);
-        }
-    });
-
-    nextBtn.addEventListener("click", () => {
-        currentSongIndex++;
-        if (currentSongIndex >= playlist.length) {
-            shuffle(playlist);
-            currentSongIndex = 0;
-        }
-        loadSong(currentSongIndex);
-    });
     </script>
     
     <h1>Radio Tev</h1>
