@@ -135,6 +135,11 @@
    
     let currentSongIndex = 0;
 
+    function loadSong(index) {
+        audioPlayer5.src = playlist[index];
+        audioPlayer5.load();
+        audioPlayer5.play();
+    }
     loadSong(currentSongIndex);
 
     audioPlayer5.addEventListener("ended", () => {
