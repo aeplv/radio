@@ -87,7 +87,12 @@
     </audio>
 
     <script>
-        
+        function playAudio5() {
+            const audioPlayer5 = document.getElementById("audioPlayer5");
+            audioPlayer5.src = playlist[index];
+            audioPlayer5.load();
+            audioPlayer5.play();
+            
        const playlist = [
         "https://aeplv.github.io/musicbox/audio2.mp3",
         "https://aeplv.github.io/musicbox/audio1.mp3",
@@ -127,15 +132,8 @@
 
     // Shuffle playlist at the start
     shuffle(playlist);
-
-    const audioPlayer5 = document.getElementById("audioPlayer5");
+   
     let currentSongIndex = 0;
-
-    function loadSong(index) {
-        audioPlayer5.src = playlist[index];
-        audioPlayer5.load();
-        audioPlayer5.play();
-    }
 
     loadSong(currentSongIndex);
 
