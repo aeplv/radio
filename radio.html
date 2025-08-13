@@ -80,7 +80,7 @@
     </script>
 
     <h1>MusicBoxRadio</h1>
-    <button onclick="loadSong(index)">Play</button>
+    <button onclick="loadSong(currentSongIndex)">Play</button>
     <br><br>
     <audio id="audioPlayer5" controls>
         Your browser does not support the audio tag.
@@ -136,8 +136,6 @@
         audioPlayer5.src = playlist[index];
         audioPlayer5.play();
     }
-
-    loadSong(currentSongIndex);
 
     audioPlayer5.addEventListener("ended", () => {
         currentSongIndex++;
