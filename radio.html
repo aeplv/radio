@@ -148,15 +148,7 @@
             loadSong(currentSongIndex);
         }
     });
-
-    nextBtn.addEventListener("click", () => {
-        currentSongIndex++;
-        if (currentSongIndex >= playlist.length) {
-            shuffle(playlist);
-            currentSongIndex = 0;
-        }
-        loadSong(currentSongIndex);
-    });
+        
     </script>
 
     <h1>LuciferRadio</h1>
@@ -229,15 +221,7 @@
             loadSong1(currentSongIndex1);
         }
     });
-
-    nextBtn.addEventListener("click", () => {
-        currentSongIndex1++;
-        if (currentSongIndex1 >= playlist1.length) {
-            shuffle1(playlist1);
-            currentSongIndex1 = 0;
-        }
-        loadSong1(currentSongIndex1);
-    });
+        
     </script>
     
     <h1>Radio Tev</h1>
