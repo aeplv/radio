@@ -158,21 +158,77 @@
         loadSong(currentSongIndex);
     });
     </script>
-    
-    <h1>Radio Tev</h1>
-    <button onclick="playAudio6()">Play</button>
+
+    <h1>LuciferRadio</h1>
+    <button onclick="loadSong(currentSongIndex)">Play</button>
     <br><br>
     <audio id="audioPlayer6" controls>
         Your browser does not support the audio tag.
     </audio>
 
     <script>
-        function playAudio6() {
-            const predefinedUrl6 = 'http://stream.radiotev.lv:8443/radiov';
-            const audioPlayer6 = document.getElementById('audioPlayer6');
-            audioPlayer6.src = predefinedUrl6;
-            audioPlayer6.load();
-            audioPlayer6.play();
+    // List of audio sources
+    const playlist = [
+        "https://aeplv.github.io/musicbox/audio2.mp3"
+
+    ];
+
+    // Shuffle function (Fisher-Yates)
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // Shuffle playlist at the start
+    shuffle(playlist);
+
+    const audioPlayer6 = document.getElementById("audioPlayer6");
+    const nextBtn = document.getElementById("nextBtn");
+    let currentSongIndex = 0;
+
+    function loadSong(index) {
+        audioPlayer6.src = playlist[index];
+        audioPlayer6.play();
+    }
+
+    audioPlayer5.addEventListener("ended", () => {
+        currentSongIndex++;
+        if (currentSongIndex < playlist.length) {
+            loadSong(currentSongIndex);
+        } else {
+            // Reshuffle when playlist ends and restart
+            shuffle(playlist);
+            currentSongIndex = 0;
+            loadSong(currentSongIndex);
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentSongIndex++;
+        if (currentSongIndex >= playlist.length) {
+            shuffle(playlist);
+            currentSongIndex = 0;
+        }
+        loadSong(currentSongIndex);
+    });
+    </script>
+    
+    <h1>Radio Tev</h1>
+    <button onclick="playAudio7()">Play</button>
+    <br><br>
+    <audio id="audioPlayer7" controls>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playAudio7() {
+            const predefinedUrl7 = 'http://stream.radiotev.lv:8443/radiov';
+            const audioPlayer7 = document.getElementById('audioPlayer7');
+            audioPlayer7.src = predefinedUrl7;
+            audioPlayer7.load();
+            audioPlayer7.play();
         }
     </script>
 </body>
