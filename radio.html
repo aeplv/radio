@@ -160,7 +160,7 @@
     </script>
 
     <h1>LuciferRadio</h1>
-    <button onclick="loadSong(currentSongIndex)">Play</button>
+    <button onclick="loadSong1(currentSongIndex)">Play</button>
     <br><br>
     <audio id="audioPlayer6" controls>
         Your browser does not support the audio tag.
@@ -168,7 +168,7 @@
 
     <script>
     // List of audio sources
-    const playlist = [
+    const playlist1 = [
         "https://aeplv.github.io/musicbox/audio2.mp3"
 
     ];
@@ -182,36 +182,36 @@
     }
 
     // Shuffle playlist at the start
-    shuffle(playlist);
+    shuffle(playlist1);
 
     const audioPlayer6 = document.getElementById("audioPlayer6");
     const nextBtn = document.getElementById("nextBtn");
     let currentSongIndex = 0;
 
-    function loadSong(index) {
-        audioPlayer6.src = playlist[index];
+    function loadSong1(index) {
+        audioPlayer6.src = playlist1[index];
         audioPlayer6.play();
     }
 
-    audioPlayer5.addEventListener("ended", () => {
+    audioPlayer6.addEventListener("ended", () => {
         currentSongIndex++;
-        if (currentSongIndex < playlist.length) {
-            loadSong(currentSongIndex);
+        if (currentSongIndex < playlist1.length) {
+            loadSong1(currentSongIndex);
         } else {
             // Reshuffle when playlist ends and restart
-            shuffle(playlist);
+            shuffle(playlist1);
             currentSongIndex = 0;
-            loadSong(currentSongIndex);
+            loadSong1(currentSongIndex);
         }
     });
 
     nextBtn.addEventListener("click", () => {
         currentSongIndex++;
         if (currentSongIndex >= playlist.length) {
-            shuffle(playlist);
+            shuffle(playlist1);
             currentSongIndex = 0;
         }
-        loadSong(currentSongIndex);
+        loadSong1(currentSongIndex);
     });
     </script>
     
