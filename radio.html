@@ -160,7 +160,7 @@
     </script>
 
     <h1>LuciferRadio</h1>
-    <button onclick="loadSong1(currentSongIndex)">Play</button>
+    <button onclick="loadSong1(currentSongIndex1)">Play</button>
     <br><br>
     <audio id="audioPlayer6" controls>
         Your browser does not support the audio tag.
@@ -174,44 +174,44 @@
     ];
 
     // Shuffle function (Fisher-Yates)
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
+    function shuffle1(array1) {
+        for (let i = array1.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+            [array1[i], array1[j]] = [array1[j], array1[i]];
         }
     }
 
     // Shuffle playlist at the start
-    shuffle(playlist1);
+    shuffle1(playlist1);
 
     const audioPlayer6 = document.getElementById("audioPlayer6");
     const nextBtn = document.getElementById("nextBtn");
-    let currentSongIndex = 0;
+    let currentSongIndex1 = 0;
 
-    function loadSong1(index) {
-        audioPlayer6.src = playlist1[index];
+    function loadSong1(index1) {
+        audioPlayer6.src = playlist1[index1];
         audioPlayer6.play();
     }
 
     audioPlayer6.addEventListener("ended", () => {
-        currentSongIndex++;
-        if (currentSongIndex < playlist1.length) {
-            loadSong1(currentSongIndex);
+        currentSongIndex1++;
+        if (currentSongIndex1 < playlist1.length) {
+            loadSong1(currentSongIndex1);
         } else {
             // Reshuffle when playlist ends and restart
-            shuffle(playlist1);
-            currentSongIndex = 0;
-            loadSong1(currentSongIndex);
+            shuffle1(playlist1);
+            currentSongIndex1 = 0;
+            loadSong1(currentSongIndex1);
         }
     });
 
     nextBtn.addEventListener("click", () => {
-        currentSongIndex++;
-        if (currentSongIndex >= playlist.length) {
-            shuffle(playlist1);
-            currentSongIndex = 0;
+        currentSongIndex1++;
+        if (currentSongIndex1 >= playlist1.length) {
+            shuffle1(playlist1);
+            currentSongIndex1 = 0;
         }
-        loadSong1(currentSongIndex);
+        loadSong1(currentSongIndex1);
     });
     </script>
     
